@@ -1,6 +1,7 @@
 <script>
 
 function compPlay (){
+
   let comChoice= Math.random();
   console.log(comChoice);
   if (comChoice<=0.33){
@@ -14,36 +15,40 @@ function compPlay (){
   }
 
 function userPlay (){
-  let input = prompt("rock, paper or scissors");
+
+  var input = prompt("rock, paper or scissors");
   console.log(input);
   return input;
   }
 
 function thegame (compPlay,userPlay){
-  let comScore = 0;
-  let userScore = 0;
 
-  for (var round = 0; round < 6; round++){
-  if (compPlay=="rock" && userPlay=="rock") {
-      alert("its tied");
+  let comPoints =0;
+  let userPoints = 0;
+
+  if (compPlay===userPlay) {
+    alert("its tied");
   } else if (compPlay === "rock" && userPlay === "scissors") {
-      alert("you lose!");
-      ++comScore;
+    alert("you lose!");
+    ++comPoints;
   } else if (compPlay === "scissors" && userPlay === "paper") {
-      alert("you lose");
-      ++comScore;
+    alert("you lose");
+    ++comPoints;
   } else if (compPlay=== "paper" && userPlay === "rock"){
-      alert("you lose");
-      ++comScore;
+    alert("you lose");
+    ++comPoints;
   } else {
-      alert("you win");
-      ++userScore;
+    alert("you win");
+    ++userPoints;
   }
+
   console.log('compPlay: '+compPlay);
   console.log('userPlay: '+userPlay);
-}}
 
+  alert("Comp: " + comPoints + "User: " + userPoints);
+  }
 
+for (var round=0; round<5; round++)
   thegame(compPlay(),userPlay());
 
 </script>
