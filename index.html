@@ -1,0 +1,49 @@
+<script>
+
+function compPlay (){
+  let comChoice= Math.random();
+  console.log(comChoice);
+  if (comChoice<=0.33){
+    comChoice= "rock";
+  } else if (comChoice<=0.66){
+    comChoice= "scissors";
+  } else {
+    comChoice= "paper";
+  }
+  return comChoice;
+  }
+
+function userPlay (){
+  let input = prompt("rock, paper or scissors");
+  console.log(input);
+  return input;
+  }
+
+function thegame (compPlay,userPlay){
+  let comScore = 0;
+  let userScore = 0;
+
+  for (var round = 0; round < 6; round++){
+  if (compPlay=="rock" && userPlay=="rock") {
+      alert("its tied");
+  } else if (compPlay === "rock" && userPlay === "scissors") {
+      alert("you lose!");
+      ++comScore;
+  } else if (compPlay === "scissors" && userPlay === "paper") {
+      alert("you lose");
+      ++comScore;
+  } else if (compPlay=== "paper" && userPlay === "rock"){
+      alert("you lose");
+      ++comScore;
+  } else {
+      alert("you win");
+      ++userScore;
+  }
+  console.log('compPlay: '+compPlay);
+  console.log('userPlay: '+userPlay);
+}}
+
+
+  thegame(compPlay(),userPlay());
+
+</script>
